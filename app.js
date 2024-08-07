@@ -19,8 +19,14 @@ window.onscroll = () => {
         if (top >= offset && top < offset * height) {
             navLinks.forEach.apply(links => {
                 links.classList.remove('active');
-                document.querySelector()
-            })
-        }
-    })
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+            });
+        };
+    });
+
+    let header = document.querySelector('header');
+    header.classList.toggle('sticky',window.screenY > 100);
+
+    menuIcon.classList.remove('fa-xmark');
+    navbar.classList.remove('active')
 }
