@@ -103,6 +103,25 @@ span {
   border-radius: 50%;
 }
 
+
+.intro::after{
+  content: "";
+  font-size: 3.5rem;
+  animation: introChange 5s ease-in-out infinite;
+  transition: 1s;
+}
+@keyframes introChange{
+  0%{
+    content: "Full Stack developer";
+  }
+  50%{
+    content: "Software developer";
+  }
+  100%{
+    content: "Full Stack developer";
+  }
+}
+
 @keyframes floatImage {
   0% {
     transform: translateY(0);
