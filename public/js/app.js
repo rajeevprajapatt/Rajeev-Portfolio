@@ -30,3 +30,23 @@ window.onscroll = () => {
     menuIcon.classList.remove('fa-xmark');
     navbar.classList.remove('active')
 }
+
+ScrollReveal({
+    reset: false,
+    distance: "60px",
+    duration: 1300,
+    delay: 400,
+});
+ScrollReveal().reveal(".header, .heading", { delay: 500, origin: "top" });
+ScrollReveal().reveal(
+    ".skill-image, .project-box, .contact form, .footer",
+    { delay: 500, origin: "bottom" }
+);
+ScrollReveal().reveal(
+    ".home-content, .about-img",
+    { delay: 500, origin: "left" }
+);
+ScrollReveal().reveal(
+    ".home-img, .about-content",
+    { delay: 500, origin: "right" }
+);
