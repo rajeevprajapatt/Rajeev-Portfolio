@@ -6,15 +6,6 @@ const path = require("path");
 
 const router = express.Router();
 
-// const transPorter = nodemailer.createTransport(
-//     {
-//         service: "gmail",
-//         auth: {
-//             user: "rajeevprajapat43@gmail.com",
-//             pass: "6378952948"
-//         }
-//     });
-
 router.get("/", (req, res) => {
     const msg = req.session.message;
     req.session.message = null;
@@ -36,23 +27,6 @@ router.post("/contactMessage", async (req, res) => {
             email: body.email,
             message: body.message
         });
-
-        // const mailOption = {
-        //     from: "rajeevprajapat43@gmail.com",
-        //     to: body.email,
-        //     subject: "Sending Email using Node.js",
-        //     text: "this is the mail"
-        // }
-
-        // transPorter.sendMail(mailOption, (err, info) => {
-        //     if (err) {
-        //         console.log(err);
-        //     }
-        //     else {
-        //         console.log("Email sent: " + info.response);
-        //     }
-        // })
-        
         req.session.message = "Message sent successfully";
 
         return res.redirect("/");
@@ -62,7 +36,7 @@ router.post("/contactMessage", async (req, res) => {
 })
 
 router.get("/ResumeDownload",(req,res)=>{
-    const file = path.resolve("./public","files","RajeevPrajapatResume.pdf");
+    const file = path.resolve("./public","files","Rajeev Prajapat Resume.pdf");
     res.download(file);
 })
 
