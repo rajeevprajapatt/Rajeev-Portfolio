@@ -3,6 +3,7 @@ const path = require("path");
 const staticRouter = require("./routes/staticRouter");
 const mongoConnect = require("./connection");
 const session = require("express-session");
+const uri = "mongodb+srv://rajeevprajapat06:Rajeev%4063789@Fashion-View.jr5jy.mongodb.net/RajeevPortfolioEmails?retryWrites=true&w=majority";
 
 // console.log("my name is ",process.env.);
 const app = express();
@@ -15,7 +16,7 @@ app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
 app.use(express.static(path.resolve("./public")));
 // "mongodb://127.0.0.1:27017/Portfolio"
-mongoConnect(Url).then(() => {
+mongoConnect(uri).then(() => {
     console.log("Mongo Connect Successfully");
 })
 
