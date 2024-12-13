@@ -36,7 +36,7 @@ router.post("/contactMessage", async (req, res) => {
 })
 
 router.get("/ResumeDownload",(req,res)=>{
-    const file = path.resolve("./public","files","Rajeev Prajapat Resume.pdf");
+    const file = path.resolve("./public","files","Rajeev Prajapat - Resume.pdf");
     res.download(file);
 })
 
